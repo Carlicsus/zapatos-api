@@ -31,7 +31,7 @@ class Payment {
     }
 
     static mapping = {
-        table "payments"
+        table "tbb_payments"
         version false
     }
 }

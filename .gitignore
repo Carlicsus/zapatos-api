@@ -11,4 +11,4 @@ out/
 .settings
 .classpath
 
-grails-app\conf\application.yml
+grails-app/conf/application.yml

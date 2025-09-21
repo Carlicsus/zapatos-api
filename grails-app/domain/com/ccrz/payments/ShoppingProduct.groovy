@@ -17,7 +17,7 @@ class ShoppingProduct {
     }
 
     static mapping = {
-        table "products_shopping"
+        table "tbb_products_shopping"
         version false
     }
 }

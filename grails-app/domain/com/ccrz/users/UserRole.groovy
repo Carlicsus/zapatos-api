@@ -2,6 +2,7 @@ package com.ccrz.users
 
 class UserRole {
 
-    static constraints = {
-    }
+  static constraints = {
+
+  }
 }

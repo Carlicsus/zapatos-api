@@ -10,5 +10,5 @@ out/
 .project
 .settings
 .classpath
-
+bin/
 grails-app/conf/application.yml

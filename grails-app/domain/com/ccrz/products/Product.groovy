@@ -1,13 +1,13 @@
 package com.ccrz.products
 
 class Product {
-    String uuid = UUID.randomUUID().toString().replaceAll("\\-", "")
+    String id = UUID.randomUUID().toString().replaceAll('\\-','') // usa 'id' como PK
     String name
     String slug
     String description
     String brand
     Integer amount
-    Map <String, Object> variants
+    Map<String, Object> variants
     Integer basePrice
     Boolean status = true
     Date dateCreated
@@ -21,10 +21,12 @@ class Product {
     }
 
     static mapping = {
+        table 'tbb_product'
         version false
-        table name: 'tbb_product'
+        id column: 'uuid', generator: 'assigned'  // <- PK = uuid
+        // elimina el campo 'uuid' extra; ahora 'id' ES el uuid
         description type: 'text'
-        uuid index: 'uuid_idx'
+        // si quieres índice adicional sobre slug:
         slug index: 'slug_idx'
     }
 

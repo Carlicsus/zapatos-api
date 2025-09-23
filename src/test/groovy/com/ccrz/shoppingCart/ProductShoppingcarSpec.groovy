@@ -3,7 +3,7 @@ package com.ccrz.shoppingCart
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class ProductShoppingcarSpec extends Specification implements DomainUnitTest<ProductShoppingcar> {
+class ProductShoppingcarSpec extends Specification implements DomainUnitTest<ProductsShoppingCart> {
 
     def setup() {
     }

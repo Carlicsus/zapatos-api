@@ -73,23 +73,23 @@ dataSource:
     jmxExport: true
     driverClassName: com.mysql.cj.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL8Dialect 
-    username: root
-    password: 12345
-    url: jdbc:mysql://localhost:3306/zapatos_bd?useSSL=false&serverTimezone=UTC
+    username: 'root'
+    password: 1234
+    url: jdbc:mysql://localhost:3307/zapatos_bd?useSSL=false&serverTimezone=UTC
 
 environments:
     development:
         dataSource:
-            dbCreate: update
-            url: jdbc:mysql://localhost:3306/zapatos_bd_dev?useSSL=false&serverTimezone=UTC
+            dbCreate: create-drop
+            url: jdbc:mysql://localhost:3307/zapatos_bd_dev?useSSL=false&serverTimezone=UTC
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/zapatos_bd_test?useSSL=false&serverTimezone=UTC
+            url: jdbc:mysql://localhost:3307/zapatos_bd_test?useSSL=false&serverTimezone=UTC
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:mysql://localhost:3306/zapatos_bd_prod?useSSL=false&serverTimezone=UTC
+            url: jdbc:mysql://localhost:3307/zapatos_bd_prod?useSSL=false&serverTimezone=UTC
             properties:
                 jmxEnabled: true
                 initialSize: 5

@@ -3,7 +3,7 @@ package com.ccrz.products
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class Product_brandSpec extends Specification implements DomainUnitTest<Product_brand> {
+class Product_brandSpec extends Specification implements DomainUnitTest<ProductBrand> {
 
     def setup() {
     }

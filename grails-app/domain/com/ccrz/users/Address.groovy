@@ -11,11 +11,15 @@ class Address {
     String state
     String zipCode
     String country
+
+    static hasMany = [user: User]
+
     static constraints = {
         
     }
 
     static mapping = {
+        table name:"tbb_Adrees"
         version false
     }
 }

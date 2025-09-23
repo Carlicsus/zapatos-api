@@ -1,6 +1,7 @@
 package com.ccrz.users
 
 class User {
+
     String name
     String last_name
     String email
@@ -11,6 +12,7 @@ class User {
     Date created_at
     Date update_at
 
+    static hasMany = [userRoles: UserRole]
 
     static constraints = {
     name (blank:false,  size:3..30, matches:"[a-zA-Z1-9_]+")

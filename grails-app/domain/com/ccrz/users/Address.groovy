@@ -1,6 +1,7 @@
 package com.ccrz.users
 
 class Address {
+    String uuid = UUID.randomUUID().toString().replaceAll("-", "")
     User userId
     String alias
     String street
@@ -12,14 +13,17 @@ class Address {
     String zipCode
     String country
 
-    static hasMany = [user: User]
-
     static constraints = {
         
     }
 
     static mapping = {
         table name:"tbb_Adrees"
+        id name: 'uuid', generator: 'assigned'
         version false
+
+        columns {
+            userId column: "uuid_user"
+        }
     }
 }

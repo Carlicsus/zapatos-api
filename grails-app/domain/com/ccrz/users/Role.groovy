@@ -1,6 +1,8 @@
 package com.ccrz.users
 
 class Role {
+    String uuid = UUID.randomUUID().toString().replaceAll("-", "")
+    
     String rol
     String status = "active"
 
@@ -11,5 +13,7 @@ class Role {
 
     static mapping = {
         table name:"tbb_Role"
+        id name: 'uuid', generator: 'assigned'
+        version false
     }
 }

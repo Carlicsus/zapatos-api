@@ -10,13 +10,17 @@ class Product {
     Integer amount
     Map<String, Object> variants
     Integer basePrice
-    Boolean status = true
+    String status = "active"
     Date dateCreated
 
     static hasMany = [cartItems: ProductsShoppingCart]  // relación inversa
+    static hasMany = [categories: Category, reviews: Review]
+    static belongsTo = [category: Category, brandObj: Brand]
+
 
     static constraints = {
-        uuid       nullable: false, blank: false, maxSize: 36
+        status inList: ["active", "inactive"]
+        uuid nullable: false, blank: false, maxSize: 36
         name blank:false, maxSize: 255
         brand maxSize: 100
         description nullable: true, maxSize: 1000
@@ -26,6 +30,7 @@ class Product {
 
     static mapping = {
         table 'tbb_product'
+        status sqlType: "Enum('active','inactive')"
         version false
         id name: 'uuid', column: 'uuid', generator: 'assigned'
         // elimina el campo 'uuid' extra; ahora 'id' ES el uuid

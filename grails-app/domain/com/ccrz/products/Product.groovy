@@ -12,11 +12,8 @@ class Product {
     String status = "active"
     Date dateCreated
 
-    static hasMany = [categories: Category]
-    static belongsTo = [category: Category]
-    static hasMany = [reviews: Review]
-    static belongsTo = [brandObj: Brand]
-    
+    static hasMany = [categories: Category, reviews: Review]
+    static belongsTo = [category: Category, brandObj: Brand]
 
 
     static constraints = {

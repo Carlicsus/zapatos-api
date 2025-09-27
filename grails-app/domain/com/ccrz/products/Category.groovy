@@ -9,9 +9,6 @@ class Category {
     String status = "active"
     Date dateCreated
 
-    static belongsTo = [product: Product]
-    static hasMany = [products: Product]
-
     static constraints = {
         status inList: ["active", "inactive"]
         name blank:false, maxSize: 255

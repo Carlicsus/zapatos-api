@@ -13,9 +13,8 @@ class Product {
     String status = "active"
     Date dateCreated
 
-    static hasMany = [cartItems: ProductsShoppingCart]  // relación inversa
-    static hasMany = [categories: Category, reviews: Review]
-    static belongsTo = [category: Category, brandObj: Brand]
+    static hasMany = [reviews: Review, cartItems: ProductsShoppingCart]
+    static belongsTo = [brand: Brand]
 
 
     static constraints = {

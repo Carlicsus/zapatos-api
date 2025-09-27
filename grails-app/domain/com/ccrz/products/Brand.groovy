@@ -8,6 +8,8 @@ class Brand {
     Boolean status = true
     Date dateCreated
 
+    static hasMany = [products: Product]
+
     static constraints = {
         name nullable: false, blank: false, maxSize: 255
         origin nullable: false, blank: false, maxSize: 255

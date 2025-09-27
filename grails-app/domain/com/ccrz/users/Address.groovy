@@ -14,7 +14,15 @@ class Address {
     String country
 
     static constraints = {
-        
+        alias       (unique:true, maxSize:22)
+        street      (unique:true, nullable:false)
+        outerNumber ()
+        innerNumber ()
+        block       (nullable:true, maxSize:120)
+        city        (nullable:true)
+        state       (nullable:true)
+        zipCode     (nullable:true)
+        country     (nullable:true)
     }
 
     static mapping = {

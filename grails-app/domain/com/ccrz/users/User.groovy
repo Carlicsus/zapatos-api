@@ -15,13 +15,13 @@ class User {
     static belongsTo = [adrees: Address]
 
     static constraints = {
-    name (blank:false,  size:3..30, matches:"[a-zA-Z1-9_]+")
-    uuid   maxSize: 36, unique: true
-    last_name (blank:false,  size:3..30, matches:"[a-zA-Z1-9_]+")
-    email (email:true, blank: false, )
-    password (password:true, blank:false,  size:3..30, matches:"[a-aA-Z1-9_]+")
-    phone_number (nullable: true)
-    status inList:['active', 'inactive']
+    name        (blank:false,  size:3..30, matches:"[a-zA-Z1-9_]+")
+    uuid        (maxSize: 36, unique: true)
+    last_name   (blank:false,  size:3..30, matches:"[a-zA-Z1-9_]+")
+    email       (email:true, blank: false)
+    password    (password:true, blank:false,  size:3..30, matches:"[a-aA-Z1-9_]+")
+    phone_number (nullable: true, blank:false size:10)
+    status       inList:['active', 'inactive']
     }
 
     static mapping = {

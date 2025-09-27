@@ -12,13 +12,16 @@ class UserRole implements Serializable {
   static constraints = {
     uuid unique:true, maxSize:36
     user nullable:false
-    role nullable:false, unique:'user'  // (user, role) único
+    role nullable:false, unique:'user'
   }
   static mapping = {
     table 'tbd_User_Role'
         id name:'uuid', generator:'assigned'
+        id composite: ['user', 'role']
         version false
+        columns{
         user column:'uuid_user'
         role column:'uuid_role'
+        }
   }
 }

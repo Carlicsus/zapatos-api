@@ -9,6 +9,7 @@ class Role {
     static hasMany = [userRoles: UserRole]
     static constraints = {
         status inList : ["active", "inactive"]
+        rol             (nullable:true, unique:true, size:3..22)
     }
 
     static mapping = {

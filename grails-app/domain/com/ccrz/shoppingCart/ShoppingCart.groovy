@@ -1,4 +1,5 @@
 package com.ccrz.shoppingCart
+import com.ccrz.shoppingCart.ProductsShoppingCart  
 
 class ShoppingCart implements Serializable {
     // PK
@@ -8,6 +9,8 @@ class ShoppingCart implements Serializable {
 
     Boolean status = true
     Date lastUpdated
+
+    static hasMany = [items: ProductsShoppingCart]  
 
     static constraints = {
         uuid       nullable: false, blank: false, maxSize: 36

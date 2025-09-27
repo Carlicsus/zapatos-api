@@ -1,4 +1,5 @@
 package com.ccrz.products
+import com.ccrz.shoppingCart.ProductsShoppingCart  
 
 class Product {
     String uuid = UUID.randomUUID().toString().replaceAll('\\-','')
@@ -11,6 +12,8 @@ class Product {
     Integer basePrice
     Boolean status = true
     Date dateCreated
+
+    static hasMany = [cartItems: ProductsShoppingCart]  // relación inversa
 
     static constraints = {
         uuid       nullable: false, blank: false, maxSize: 36
